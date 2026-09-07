@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Basic Content Security Policy (CSP) Header for Security -->
+  <meta http-equiv="Content-Security-Policy" 
+        content="default-src 'self' https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' https: 'unsafe-inline'; img-src 'self' https: data:;">
+
+  <title>Aroma Cafe</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- External JS Libraries loaded safely via HTTPS CDN -->
+  <!-- GSAP for Smooth Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <!-- DOMPurify for XSS Prevention -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js" defer></script>
+  
+  <!-- Custom JS -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">Aroma Cafe</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1 class="anim-hero">Freshly Brewed Happiness</h1>
+      <p class="anim-hero">Artisanal coffee and handmade pastries crafted every single morning.</p>
+      <a href="#menu" class="btn anim-hero">View Menu</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2 class="anim-scroll">About Us</h2>
+    <p class="anim-scroll">Founded in 2020, Aroma Cafe brings locally sourced beans and warmth to your daily routine. Whether you need a quick morning espresso or a cozy corner to read, we have a seat waiting for you.</p>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu">
+    <h2 class="anim-scroll">Our Favorites</h2>
+    <div class="menu-grid">
+      <div class="menu-card anim-card">
+        <h3>Espresso</h3>
+        <p>Rich, dark, and full-bodied single-origin shot.</p>
+        <span>$3.50</span>
+      </div>
+      <div class="menu-card anim-card">
+        <h3>Caramel Latte</h3>
+        <p>Espresso with steamed milk and homemade caramel drizzle.</p>
+        <span>$4.75</span>
+      </div>
+      <div class="menu-card anim-card">
+        <h3>Matcha Latte</h3>
+        <p>Ceremonial grade matcha blended with oat milk.</p>
+        <span>$5.00</span>
+      </div>
+      <div class="menu-card anim-card">
+        <h3>Fresh Croissant</h3>
+        <p>Flaky, butter-rich pastry baked fresh daily.</p>
+        <span>$3.25</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Contact / Reservation Form (Demonstrating Security) -->
+  <section id="contact" class="contact-section">
+    <h2 class="anim-scroll">Reserve a Table</h2>
+    <form id="reservation-form" class="anim-scroll">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+    <div id="form-response"></div>
+  </section>
+
+  <footer>
+    <p>123 Coffee Lane, Downtown | Open Daily: 7 AM – 7 PM</p>
+    <p>&copy; 2026 Aroma Cafe. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
